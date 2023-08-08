@@ -1,0 +1,5 @@
+# ameliacitradewi.com/robots.txt
+User-agent: googlebot
+Disallow: /css/
+Disallow: /js/
+Disallow: /assets/
