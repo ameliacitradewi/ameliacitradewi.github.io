@@ -79,7 +79,10 @@
           </div>
 
           <div class="col-lg-7">
-            <form id="google-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            <form id="google-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSfYaQBiIoIdPcgPP9pTFypcA4vNYW5vqmIwQ3ty6Xp8Iak2Dw/formResponse"
+              method="POST"
+              target="hidden_iframe">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -149,31 +152,55 @@
 
   <!-- Google Form Integration -->
   <script>
-    document.getElementById('google-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = e.target;
+    (function () {
+      // Submit to Google Forms by posting the form to a hidden iframe.
+      // This avoids fetch() with no-cors which often doesn't record responses.
+      const form = document.getElementById('google-form');
       const loading = form.querySelector('.loading');
       const success = form.querySelector('.sent-message');
       const error = form.querySelector('.error-message');
 
-      loading.style.display = 'block';
-      success.style.display = 'none';
-      error.style.display = 'none';
+      // Create hidden iframe (in case it's not present)
+      if (!document.getElementById('hidden_iframe')) {
+        const iframe = document.createElement('iframe');
+        iframe.name = 'hidden_iframe';
+        iframe.id = 'hidden_iframe';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
 
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfYaQBiIoIdPcgPP9pTFypcA4vNYW5vqmIwQ3ty6Xp8Iak2Dw/formResponse", {
-        method: 'POST',
-        body: new FormData(form),
-        mode: 'no-cors'
-      }).then(() => {
-        loading.style.display = 'none';
-        success.style.display = 'block';
-        form.reset();
-      }).catch(() => {
-        loading.style.display = 'none';
-        error.style.display = 'block';
+      // When the iframe loads after submission, show success (Google redirects to a thank-you page).
+      const iframe = document.getElementById('hidden_iframe');
+      iframe.addEventListener('load', function () {
+        // Only show success if we were submitting
+        if (loading.style.display === 'block') {
+          loading.style.display = 'none';
+          success.style.display = 'block';
+          form.reset();
+        }
       });
-    });
+
+      form.addEventListener('submit', function (e) {
+        // Show loading and let the browser perform the POST to the Google Forms endpoint (targeting iframe)
+        loading.style.display = 'block';
+        success.style.display = 'none';
+        error.style.display = 'none';
+
+        // Allow the normal form submission to proceed (do not call e.preventDefault())
+        // If the form does not succeed within X seconds, show an error message.
+        setTimeout(function () {
+          if (loading.style.display === 'block') {
+            loading.style.display = 'none';
+            // We can't reliably detect cross-origin failures here; show a friendly error
+            error.style.display = 'block';
+          }
+        }, 8000);
+      });
+    })();
   </script>
+
+  <!-- Hidden iframe target for Google Forms submission -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 </body>
 </html>
