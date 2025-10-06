@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Amelia Citra Dewi</title>
+  <title>Portfolio</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -36,7 +36,7 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
+<body class="portfolio-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid  position-relative d-flex align-items-center justify-content-between">
@@ -49,10 +49,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <!-- <li><a href="services.html">Services</a></li> -->
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -80,6 +80,19 @@
 
   <main class="main">
 
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>Portfolio</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
@@ -89,17 +102,17 @@
 
           <div class="row align-items-center">
             <div class="col-lg-7 portfolio-info">
-              <h3>Hello, I'm Amelia Citra Dewi!</h3>
-              <p>Here you can find a selection of my work and projects.</p>
+              <!-- <h3>Hey, I'm Amelia!</h3>
+              <p>Welcome to my portfolio! Here you can find a selection of my work and projects.</p> -->
             </div>
             <div class="col-lg-5 text-center text-lg-end">
-              <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                <!-- <li data-filter="*" class="filter-active">All</li>
+              <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
                 <li data-filter=".filter-app">App</li>
                 <li data-filter=".filter-product">Product</li>
                 <li data-filter=".filter-branding">Branding</li>
-                <li data-filter=".filter-books">Books</li> -->
-              </ul><!-- End Portfolio Filters -->
+                <li data-filter=".filter-books">Books</li>
+              </ul>End Portfolio Filters -->
             </div>
           </div>
 
@@ -119,7 +132,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" style="position: absolute; left: 440px; top: 336px;">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: absolute; left: 440px; top: 0px;">
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
@@ -133,12 +146,12 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" style="position: absolute; left: 880px; top: 672px;">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding" style="position: absolute; left: 880px; top: 0px;">
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>LiStrict</h4>
-                  <p>LiStrict is an application designed to help residents of Rusun BPJS Kabil Batam (TB-2) estimate their monthly electricity bills more easily.</p>
+                  <p>LiStrict is an app that helps residents of Rusun BPJS Kabil (TB-2) estimate monthly electricity bills in real time. By inputting appliances, usage duration, and frequency, users can instantly calculate costs, making it easier to track, manage, and save on electricity consumption.</p>
                   <div>
                     <a href="assets/img/portfolio/app-3.jpg" title="LiStrict" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                     <a href="portfolio-details3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
@@ -161,8 +174,9 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books" style="position: absolute; left: 440px; top: 672px;">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app" style="position: absolute; left: 440px; top: 336px;">
               <div class="portfolio-content h-100">
+                <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/app-5.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Chain of Spells</h4>
@@ -175,106 +189,7 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: absolute; left: 440px; top: 0px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding" style="position: absolute; left: 880px; top: 0px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: absolute; left: 880px; top: 336px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding" style="position: absolute; left: 0px; top: 672px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-            
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product" style="position: absolute; left: 0px; top: 1008px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding" style="position: absolute; left: 440px; top: 1008px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books" style="position: absolute; left: 880px; top: 1008px;">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum</p>
-                  <div>
-                    <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>End Portfolio Item -->
-
           </div><!-- End Portfolio Container -->
-
         </div>
 
       </div>
